@@ -11,6 +11,38 @@
 */
 
 class Todo {
+  constructor(){
+    this.todo = [];
+  }
+
+  add(todo){
+    this.todo.push(todo);
+  }
+
+  remove(indexOfTodo){
+    if(this.todo.length == 0){
+      console.log("Your list is empty...Cannot remove todo");
+    }
+    this.todo.splice(indexOfTodo,1);
+  }
+
+  update(index,updatedTodo){
+    this.todo[index] = updatedTodo;
+  }
+  
+  getAll(){
+    return this.todo;
+  }
+
+  get(indexOfTodo){
+    return this.todo[indexOfTodo];
+  }
+
+  clear(){
+    while(this.todo.length > 0){
+      this.todo.pop()
+    }
+  }
 
 }
 
